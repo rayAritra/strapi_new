@@ -1,0 +1,86 @@
+{
+    "kind": "collectionType",
+    "collectionName": "courses",
+    "info": {
+        "singularName": "course",
+        "pluralName": "courses",
+        "displayName": "Course",
+        "description": "Courses available on the platform"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "slug": {
+            "type": "uid",
+            "targetField": "title"
+        },
+        "category": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::category.category",
+            "inversedBy": "courses"
+        },
+        "price": {
+            "type": "decimal"
+        },
+        "discount": {
+            "type": "decimal"
+        },
+        "language": {
+            "type": "string"
+        },
+        "cover_img": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "description": {
+            "type": "richtext"
+        },
+        "learning_outcomes": {
+            "type": "richtext"
+        },
+        "resources_note": {
+            "type": "text"
+        },
+        "video_id": {
+            "type": "string"
+        },
+        "duration": {
+            "type": "string"
+        },
+        "lectures_count": {
+            "type": "integer"
+        },
+        "skill_level": {
+            "type": "enumeration",
+            "enum": [
+                "Beginner",
+                "Intermediate",
+                "Expert"
+            ]
+        },
+        "deadline": {
+            "type": "string"
+        },
+        "certificate": {
+            "type": "boolean"
+        },
+        "curriculum": {
+            "type": "json"
+        },
+        "instructor": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::instructor.instructor",
+            "inversedBy": "courses"
+        }
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "kind": "collectionType",
+    "collectionName": "instructors",
+    "info": {
+        "singularName": "instructor",
+        "pluralName": "instructors",
+        "displayName": "Instructor",
+        "description": "Course Instructors"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "attributes": {
+        "name": {
+            "type": "string"
+        },
+        "job_title": {
+            "type": "string"
+        },
+        "bio": {
+            "type": "richtext"
+        },
+        "avatar": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "social_links": {
+            "type": "json"
+        },
+        "total_students": {
+            "type": "integer"
+        },
+        "total_courses": {
+            "type": "integer"
+        },
+        "courses": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::course.course",
+            "mappedBy": "instructor"
+        }
+    }
+}

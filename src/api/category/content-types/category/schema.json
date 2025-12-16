@@ -24,6 +24,12 @@
       "target": "api::article.article",
       "mappedBy": "category"
     },
+    "courses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course.course",
+      "mappedBy": "category"
+    },
     "description": {
       "type": "text"
     }
