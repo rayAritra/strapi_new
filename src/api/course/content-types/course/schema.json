@@ -53,6 +53,9 @@
         "video_id": {
             "type": "string"
         },
+        "youtube_url": {
+            "type": "string"
+        },
         "duration": {
             "type": "string"
         },
@@ -74,7 +77,7 @@
             "type": "boolean"
         },
         "curriculum": {
-            "type": "json"
+            "type": "richtext"
         },
         "instructor": {
             "type": "relation",

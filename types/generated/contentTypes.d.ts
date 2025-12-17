@@ -582,7 +582,7 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    curriculum: Schema.Attribute.JSON;
+    curriculum: Schema.Attribute.RichText;
     deadline: Schema.Attribute.String;
     description: Schema.Attribute.RichText;
     discount: Schema.Attribute.Decimal;
@@ -612,6 +612,7 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     video_id: Schema.Attribute.String;
+    youtube_url: Schema.Attribute.String;
   };
 }
 
