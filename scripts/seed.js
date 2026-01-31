@@ -168,8 +168,14 @@ async function updateBlocks(blocks) {
 
 async function importArticles() {
   for (const article of articles) {
-    const cover = await checkFileExistsBeforeUpload([`${article.slug}.jpg`]);
-    const updatedBlocks = await updateBlocks(article.blocks);
+    let cover = null;
+    try {
+      cover = await checkFileExistsBeforeUpload([`${article.slug}.jpg`]);
+    } catch (e) {
+      console.log(`Could not upload cover for ${article.slug}: ${e.message}`);
+    }
+
+    const updatedBlocks = await updateBlocks(article.blocks || []);
 
     await createEntry({
       model: 'article',
