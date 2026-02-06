@@ -83,7 +83,8 @@
             "type": "relation",
             "relation": "manyToOne",
             "target": "api::instructor.instructor",
-            "inversedBy": "courses"
+            "inversedBy": "courses",
+            "private": false
         }
     }
 }
